@@ -1,0 +1,23 @@
+# made by GPT totally
+
+# Ansible retry files
+*.retry
+
+# Private SSH keys
+*.pem
+
+# Real inventory (contains server details)
+inventory
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vim swap files
+*.swp
+*.swo
+*~
+
+# Python cache (Ansible uses Python)
+__pycache__/
+*.pyc
