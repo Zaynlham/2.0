@@ -1,0 +1,26 @@
+---
+- name: Deploy Website
+  hosts: web
+  become: true
+
+  tasks:
+
+    - name: Install Nginx
+      apt:
+        update_cache: yes
+        name: nginx
+        state: present
+
+    - name: Enable and start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Copy Website
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: '0644'
